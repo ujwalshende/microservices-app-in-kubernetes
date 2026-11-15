@@ -20,6 +20,8 @@ This project contains a `config.yaml` file that can be used to deploy a microser
 8. Use more than worker node to avoid having a single point of failure.
 9. Using labels for the kubernetes components to reference them better.
 10. Namespaces are very helpful to manage components. Its always better to split components into namespaces. It is also usefil for permission management.
-11. Ensuring that applications/images are free of vulnerabilities
-12. Configure containers to use non root users. If someone hacks into a container, they gain access to everything on the node. This causes a big security issue. Should be considerd especially while using third party images.
-13. Update kubernetes cluster to use the latest kubernetes version. 
+
+## Additional best practices
+1. Ensuring that applications/images are free of vulnerabilities
+2. Configure containers to use non root users. If someone hacks into a container, they gain access to everything on the node. This causes a big security issue. Should be considerd especially while using third party images.
+3. Update kubernetes cluster to use the latest kubernetes version. 
