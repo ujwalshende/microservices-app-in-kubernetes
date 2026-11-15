@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: emailservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: emailservice
@@ -84,6 +85,13 @@ spec:
           grpc:
             port: 8080
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 
 ---
 apiVersion: v1
@@ -132,6 +140,13 @@ spec:
           grpc:
             port: 3550
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 
 ---
 apiVersion: v1
@@ -180,6 +195,13 @@ spec:
           grpc:
             port: 50051
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -227,6 +249,13 @@ spec:
           grpc:
             port: 7000
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 
 ---
 apiVersion: v1
@@ -273,6 +302,13 @@ spec:
           grpc:
             port: 50051
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -375,6 +411,13 @@ spec:
           grpc:
             port: 7070
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 
 ---
 apiVersion: v1
@@ -396,7 +439,7 @@ kind: Deployment
 metadata:
   name: redis-cart
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: redis-cart
@@ -407,7 +450,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis:alpine
+        image: redis:8.8.4-alpine
         ports:
         - containerPort: 6379
         livenessProbe:
@@ -490,6 +533,13 @@ spec:
           grpc:
             port: 5050
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
       
 ---
 apiVersion: v1
@@ -552,6 +602,13 @@ spec:
             path: "/_healthz"
             port: 8080
           periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
 
 ---
 apiVersion: v1
