@@ -7,6 +7,10 @@ This project contains a `config.yaml` file that can be used to deploy a microser
 3. Create a separate namespace using `kubectl create namespace microservices` command.
 4. Deploy the app to this namepace using `kubectl apply -f config.yaml -n microservices`
 
+Output of `kubectl apply -f config.yaml -n microservices` should look like the following
+<img width="755" height="401" alt="image" src="https://github.com/user-attachments/assets/d7feaac7-38fa-4199-b3db-e1e5920efddb" />
+
+
 
 ## Best practices used in this project
 
